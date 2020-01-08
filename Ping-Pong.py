@@ -95,7 +95,7 @@ while True:
         ball.dy = -ball.dy
 
     if ball.ycor() <= -290:
-        score += 1
+        score -= 1
         s1.clear()
         s1.write(score, font=FONT)
         ball.goto(0, 100)
@@ -113,6 +113,11 @@ while True:
             and ball.xcor() >= rocket.xcor() - 50 and ball.xcor() <= rocket.xcor() + 50:
         ball.dy = -ball.dy
 
+    if ball.ycor() >= let.ycor() - 20 and ball.ycor() <= let.ycor() + 20 \
+            and ball.xcor() >= let.xcor() - 110 and ball.xcor() <= let.xcor() + 110:
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
 
 
 window.mainloop()
