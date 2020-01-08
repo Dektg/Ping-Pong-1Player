@@ -1,22 +1,31 @@
 import turtle
 from random import choice, randint
-from turtle import Turtle
 
+
+# ИНИЦИАЛИЗАЦИЯ
 score = 0
+
+ball = turtle.Turtle()
+ball.shape("circle")
+ball.speed(0)
+ball.penup()
+ball.goto(0, 100)
+
+ball.dx = 5
+ball.dy = 5
+
+space_rocket = 80
 
 window = turtle.Screen()
 window.title("2d Ping-Pong")
-# Размеры окна на весь монитор
-window.setup(width=1.0, height=1.0)
-# Задний фон
-window.bgcolor("black")
+window.setup(width=1.0, height=1.0) # Размеры окна на весь монитор
+window.bgcolor("black") # Задний фон
 window.tracer(2)
 
-# Отрисовка поля
+# ПОЛЕ
 border_rectangle = turtle.Turtle()
 border_rectangle.color("white")
-#border_rectangle.speed(0)
-# Спрятал отрисовку курсора
+    # Спрятал отрисовку курсора
 border_rectangle.hideturtle()
 border_rectangle.up()
 border_rectangle.goto(-500, 300)
@@ -26,28 +35,29 @@ border_rectangle.goto(500, 300)
 border_rectangle.goto(500, -300)
 border_rectangle.goto(-500, -300)
 border_rectangle.goto(-500, 300)
-border_rectangle.end_fill()#
+border_rectangle.end_fill()
 
+
+# СЧЁТ
 FONT = ("Arial", 44)
-score = 0
 s1 = turtle.Turtle(visible=False)
 s1.color('white')
 s1.penup()
 s1.setposition(0, 300)
 s1.write(score, font=FONT)
 
-rocket = turtle.Turtle()#
-rocket.color("black")#
-rocket.shape("square")#
-rocket.shapesize(stretch_len=5, stretch_wid=1)#
-# Не оставляет следов#
-rocket.penup()#
-rocket.goto(0, -250)#
 
-space_rocket = 80#
+# РАКЕТКА
+rocket = turtle.Turtle()
+rocket.color("black")
+rocket.shape("square")
+rocket.shapesize(stretch_len=5, stretch_wid=1)
+    # Не оставляет следов
+rocket.penup()
+rocket.goto(0, -250)
 
-
-def move_Right():#
+# УПРАВЛЕНИЕ РАКЕТКИ
+def move_Right():
     x = rocket.xcor() + space_rocket
     if x > 450:
         x = 450
@@ -60,22 +70,14 @@ def move_Left():
         x = -450
     rocket.setx(x)
 
-
-ball = turtle.Turtle()
-ball.shape("circle")
-ball.speed(0)
-
-ball.penup()
-ball.goto(0, 100)
-ball.dx = 5
-ball.dy = 5
-
 window.listen()
 window.onkeypress(move_Right, "d")
 window.onkeypress(move_Left, "a")
 window.onkeypress(move_Right, "Right")
 window.onkeypress(move_Left, "Left")
 
+
+# ШАРИК И СТЕНЫ
 while True:
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
@@ -88,8 +90,8 @@ while True:
         s1.clear()
         s1.write(score, font=FONT)
         ball.goto(0, 100)
-        ball.dx = choice([-5, 5])
-        ball.dy = choice([-3, -7])
+        ball.dx = choice([-5,-4, 4,5])
+        ball.dy = randint(-7, -5)
 
     if ball.xcor() >= 490:
         ball.dx = -ball.dx
@@ -97,8 +99,11 @@ while True:
     if ball.xcor() <= -490:
         ball.dx = -ball.dx
 
+# ШАРИК И РАКЕТКА
     if ball.ycor() >= rocket.ycor() - 5 and ball.ycor() <= rocket.ycor() + 5 \
             and ball.xcor() >= rocket.xcor() - 50 and ball.xcor() <= rocket.xcor() + 50:
         ball.dy = -ball.dy
+
+
 
 window.mainloop()
