@@ -77,6 +77,14 @@ window.onkeypress(move_Right, "Right")
 window.onkeypress(move_Left, "Left")
 
 
+#ПРЕПЯТСТВИЯ
+let = turtle.Turtle()
+let.shape("square")
+let.color("grey")
+let.shapesize(stretch_len=10, stretch_wid=2)
+let.up()
+let.goto(0, 270)
+
 # ШАРИК И СТЕНЫ
 while True:
     ball.setx(ball.xcor() + ball.dx)
@@ -86,7 +94,7 @@ while True:
         ball.dy = -ball.dy
 
     if ball.ycor() <= -290:
-        score += 1
+        score -= 1
         s1.clear()
         s1.write(score, font=FONT)
         ball.goto(0, 100)
@@ -104,6 +112,11 @@ while True:
             and ball.xcor() >= rocket.xcor() - 50 and ball.xcor() <= rocket.xcor() + 50:
         ball.dy = -ball.dy
 
-
+    if ball.ycor() >= let.ycor() - 20 and ball.ycor() <= let.ycor() + 20 \
+            and ball.xcor() >= let.xcor() - 110 and ball.xcor() <= let.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
 
 window.mainloop()
