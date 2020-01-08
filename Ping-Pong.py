@@ -1,30 +1,31 @@
-import turtle#
-from random import choice, randint#
+import turtle
+from random import choice, randint
+from turtle import Turtle
 
 score = 0
 
-window = turtle.Screen()#
-window.title("2d Ping-Pong")#
-# Размеры окна на весь монитор#
-window.setup(width=1.0, height=1.0)#
-# Задний фон#
-window.bgcolor("black")#
+window = turtle.Screen()
+window.title("2d Ping-Pong")
+# Размеры окна на весь монитор
+window.setup(width=1.0, height=1.0)
+# Задний фон
+window.bgcolor("black")
 window.tracer(2)
 
 # Отрисовка поля
-border_rectangle = turtle.Turtle()#
-border_rectangle.color("white")#
-#border_rectangle.speed(0)#
-# Спрятал отрисовку курсора#
-border_rectangle.hideturtle()#
-border_rectangle.up()#
-border_rectangle.goto(-500, 300)#
-border_rectangle.down()#
-border_rectangle.begin_fill()#
-border_rectangle.goto(500, 300)#
-border_rectangle.goto(500, -300)#
-border_rectangle.goto(-500, -300)#
-border_rectangle.goto(-500, 300)#
+border_rectangle = turtle.Turtle()
+border_rectangle.color("white")
+#border_rectangle.speed(0)
+# Спрятал отрисовку курсора
+border_rectangle.hideturtle()
+border_rectangle.up()
+border_rectangle.goto(-500, 300)
+border_rectangle.down()
+border_rectangle.begin_fill()
+border_rectangle.goto(500, 300)
+border_rectangle.goto(500, -300)
+border_rectangle.goto(-500, -300)
+border_rectangle.goto(-500, 300)
 border_rectangle.end_fill()#
 
 FONT = ("Arial", 44)
