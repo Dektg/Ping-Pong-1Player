@@ -6,7 +6,7 @@ from random import choice, randint
 score = 0
 
 rand_x = randint(-150, 150)
-rand_y = randint(0, 150)
+rand_y = randint(-150, 150)
 
 ball = turtle.Turtle()
 ball.shape("circle")
@@ -89,10 +89,9 @@ let.shapesize(stretch_len=10, stretch_wid=2)
 let.up()
 let.goto(0, 278)
 
-a = 0
+
 # ШАРИК И СТЕНЫ
 while True:
-    a+=1
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
@@ -117,7 +116,7 @@ while True:
     if ball.ycor() >= rocket.ycor() - 10 and ball.ycor() <= rocket.ycor() + 10 \
             and ball.xcor() >= rocket.xcor() - 50 and ball.xcor() <= rocket.xcor() + 50:
         ball.dy = -ball.dy
-    print(a,let.color(), sep=":")
+    print(let.color())
 
 
 # ШАРИК И КРАСТНОЕ И ЗЕЛЁНОЕ ПРИПЯДСТВИЕ
