@@ -167,11 +167,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let_orange.color() == ('red', 'red'):
+        if let_orange.color() == ('Dim Gray', 'Dim Gray'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let_orange.color('red')
+        let_orange.color('Dim Gray')
 
 
 
@@ -181,11 +181,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let_Yellow.color() == ('red', 'red'):
+        if let_Yellow.color() == ('Dim Gray', 'Dim Gray'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let_Yellow.color('red')
+        let_Yellow.color('Dim Gray')
 
 
 
@@ -195,11 +195,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let_cyan.color() == ('red', 'red'):
+        if let_cyan.color() == ('Dim Gray', 'Dim Gray'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let_cyan.color('red')
+        let_cyan.color('Dim Gray')
 
 
 
@@ -209,11 +209,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let_red.color() == ('red', 'red'):
+        if let_red.color() == ('Dim Gray', 'Dim Gray'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let_red.color('red')
+        let_red.color('Dim Gray')
 
 
     if ball.ycor() >= let_Green.ycor() - 20 and ball.ycor() <= let_Green.ycor() + 20 \
@@ -222,11 +222,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let_Green.color() == ('red', 'red'):
+        if let_Green.color() == ('Dim Gray', 'Dim Gray'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let_Green.color('red')
+        let_Green.color('Dim Gray')
 
 
     if ball.ycor() >= let_Blue.ycor() - 20 and ball.ycor() <= let_Blue.ycor() + 20 \
@@ -235,11 +235,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let_Blue.color() == ('red', 'red'):
+        if let_Blue.color() == ('Dim Gray', 'Dim Gray'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let_Blue.color('red')
+        let_Blue.color('Dim Gray')
 
 
     if ball.ycor() >= let_Violet.ycor() - 20 and ball.ycor() <= let_Violet.ycor() + 20 \
@@ -248,11 +248,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let_Violet.color() == ('red', 'red'):
+        if let_Violet.color() == ('Dim Gray', 'Dim Gray'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let_Violet.color('red')
+        let_Violet.color('Dim Gray')
 
 #Dim Gray
 window.mainloop()
