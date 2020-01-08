@@ -80,14 +80,20 @@ window.onkeypress(move_Left, "a")
 window.onkeypress(move_Right, "Right")
 window.onkeypress(move_Left, "Left")
 
-
+let_x = 0
+let_y = 278
+lets = []
+count_r = 2
 #ПРЕПЯТСТВИЯ
-let = turtle.Turtle()
-let.shape("square")
-let.color("green")
-let.shapesize(stretch_len=10, stretch_wid=2)
-let.up()
-let.goto(0, 278)
+for i in range(count_r):
+    let = turtle.Turtle()
+    let.shape("square")
+    let.color("green")
+    let.shapesize(stretch_len=10, stretch_wid=2)
+    let.up()
+    let_x += 113
+    let.goto(let_x, let_y)
+    lets.append([let, let_x, let_y])
 
 
 # ШАРИК И СТЕНЫ
@@ -130,6 +136,6 @@ while True:
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-
+        let.color('red')
 
 window.mainloop()
