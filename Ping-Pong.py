@@ -85,13 +85,19 @@ let.shapesize(stretch_len=10, stretch_wid=2)
 let.up()
 let.goto(0, 270)
 
-while for i in range(1):
-    if ball.ycor() >= let.ycor() - 20 and ball.ycor() <= let.ycor() + 20 \
-            and ball.xcor() >= let.xcor() - 110 and ball.xcor() <= let.xcor() + 110:
-        score += 1
-        s1.clear()
-        s1.write(score, font=FONT)
-        let.hideturtle()
+
+# ПРЕПЯДСТВИЕ
+#if ball.ycor() >= let.ycor() - 20 and ball.ycor() <= let.ycor() + 20 \
+       # and ball.xcor() >= let.xcor() - 110 and ball.xcor() <= let.xcor() + 110:
+   # score += 1
+   # s1.clear()
+   # s1.write(score, font=FONT)
+   # let.hideturtle()
+
+if ball.ycor() >= 250 and ball.ycor() <= 290:
+    print(let.ycor())
+
+
 # ШАРИК И СТЕНЫ
 while True:
     ball.setx(ball.xcor() + ball.dx)
