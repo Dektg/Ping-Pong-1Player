@@ -82,13 +82,55 @@ window.onkeypress(move_Left, "Left")
 
 
 #ПРЕПЯТСТВИЯ
-let = turtle.Turtle()
-let.shape("square")
-let.color("green")
-let.shapesize(stretch_len=10, stretch_wid=2)
-let.up()
-let.goto(0, 278)
+let_orange = turtle.Turtle()
+let_orange.shape("square")
+let_orange.color("orange")
+let_orange.shapesize(stretch_len=10, stretch_wid=2)
+let_orange.up()
+let_orange.goto(0, 278)
 
+let_Yellow = turtle.Turtle()
+let_Yellow.shape("square")
+let_Yellow.color("Yellow")
+let_Yellow.shapesize(stretch_len=10, stretch_wid=2)
+let_Yellow.up()
+let_Yellow.goto(210, 278)
+
+let_cyan = turtle.Turtle()
+let_cyan.shape("square")
+let_cyan.color("Cyan")
+let_cyan.shapesize(stretch_len=10, stretch_wid=2)
+let_cyan.up()
+let_cyan.goto(0, 228)
+
+let_red = turtle.Turtle()
+let_red.shape("square")
+let_red.color("Orange Red")
+let_red.shapesize(stretch_len=10, stretch_wid=2)
+let_red.up()
+let_red.goto(-210, 278)
+
+let_Green = turtle.Turtle()
+let_Green.shape("square")
+let_Green.color("Lime Green")
+let_Green.shapesize(stretch_len=10, stretch_wid=2)
+let_Green.up()
+let_Green.goto(-210, 228)
+
+let_Blue = turtle.Turtle()
+let_Blue.shape("square")
+let_Blue.color("Medium Blue")
+let_Blue.shapesize(stretch_len=10, stretch_wid=2)
+let_Blue.up()
+let_Blue.goto(210, 228)
+
+
+let_Violet = turtle.Turtle()
+let_Violet.shape("square")
+let_Violet.color("Dark Violet")
+let_Violet.shapesize(stretch_len=10, stretch_wid=2)
+let_Violet.up()
+let_Violet.goto(0, 178)
 
 # ШАРИК И СТЕНЫ
 while True:
@@ -116,21 +158,101 @@ while True:
     if ball.ycor() >= rocket.ycor() - 10 and ball.ycor() <= rocket.ycor() + 10 \
             and ball.xcor() >= rocket.xcor() - 50 and ball.xcor() <= rocket.xcor() + 50:
         ball.dy = -ball.dy
-    print(let.color())
 
 
 # ШАРИК И КРАСТНОЕ И ЗЕЛЁНОЕ ПРИПЯДСТВИЕ
-    if ball.ycor() >= let.ycor() - 20 and ball.ycor() <= let.ycor() + 20 \
-            and ball.xcor() >= let.xcor() - 110 and ball.xcor() <= let.xcor() + 110:
+    if ball.ycor() >= let_orange.ycor() - 20 and ball.ycor() <= let_orange.ycor() + 20 \
+            and ball.xcor() >= let_orange.xcor() - 110 and ball.xcor() <= let_orange.xcor() + 110:
         ball.dy = -ball.dy
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if let.color() == ('red', 'red'):
+        if let_orange.color() == ('red', 'red'):
             score -= 1
             s1.clear()
             s1.write(score, font=FONT)
-        let.color('red')
+        let_orange.color('red')
 
 
+
+    if ball.ycor() >= let_Yellow.ycor() - 20 and ball.ycor() <= let_Yellow.ycor() + 20 \
+            and ball.xcor() >= let_Yellow.xcor() - 110 and ball.xcor() <= let_Yellow.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
+        if let_Yellow.color() == ('red', 'red'):
+            score -= 1
+            s1.clear()
+            s1.write(score, font=FONT)
+        let_Yellow.color('red')
+
+
+
+    if ball.ycor() >= let_cyan.ycor() - 20 and ball.ycor() <= let_cyan.ycor() + 20 \
+            and ball.xcor() >= let_Yellow.xcor() - 110 and ball.xcor() <= let_cyan.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
+        if let_cyan.color() == ('red', 'red'):
+            score -= 1
+            s1.clear()
+            s1.write(score, font=FONT)
+        let_cyan.color('red')
+
+
+
+    if ball.ycor() >= let_red.ycor() - 20 and ball.ycor() <= let_red.ycor() + 20 \
+            and ball.xcor() >= let_red.xcor() - 110 and ball.xcor() <= let_red.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
+        if let_red.color() == ('red', 'red'):
+            score -= 1
+            s1.clear()
+            s1.write(score, font=FONT)
+        let_red.color('red')
+
+
+    if ball.ycor() >= let_Green.ycor() - 20 and ball.ycor() <= let_Green.ycor() + 20 \
+            and ball.xcor() >= let_Green.xcor() - 110 and ball.xcor() <= let_Green.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
+        if let_Green.color() == ('red', 'red'):
+            score -= 1
+            s1.clear()
+            s1.write(score, font=FONT)
+        let_Green.color('red')
+
+
+    if ball.ycor() >= let_Blue.ycor() - 20 and ball.ycor() <= let_Blue.ycor() + 20 \
+            and ball.xcor() >= let_Blue.xcor() - 110 and ball.xcor() <= let_Blue.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
+        if let_Blue.color() == ('red', 'red'):
+            score -= 1
+            s1.clear()
+            s1.write(score, font=FONT)
+        let_Blue.color('red')
+
+
+    if ball.ycor() >= let_Violet.ycor() - 20 and ball.ycor() <= let_Violet.ycor() + 20 \
+            and ball.xcor() >= let_Violet.xcor() - 110 and ball.xcor() <= let_Violet.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
+        if let_Violet.color() == ('red', 'red'):
+            score -= 1
+            s1.clear()
+            s1.write(score, font=FONT)
+        let_Violet.color('red')
+
+#Dim Gray
 window.mainloop()
