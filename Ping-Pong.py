@@ -14,7 +14,8 @@ ball.speed(0)
 ball.penup()
 ball.goto(rand_x, rand_y)
 
-ball.dx = 5
+#ball.dx = 5
+ball.dx = 0
 ball.dy = 5
 
 space_rocket = 80
@@ -88,6 +89,7 @@ let.shapesize(stretch_len=10, stretch_wid=2)
 let.up()
 let.goto(0, 278)
 
+
 # ШАРИК И СТЕНЫ
 while True:
     ball.setx(ball.xcor() + ball.dx)
@@ -101,7 +103,7 @@ while True:
         s1.clear()
         s1.write(score, font=FONT)
         ball.goto(rand_x, rand_y)
-        ball.dx = choice([-4,-3, 3, 4,])
+        #ball.dx = choice([-4,-3, 3, 4,])
         ball.dy = randint(-10, -5)
 
     if ball.xcor() >= 490:
@@ -121,8 +123,11 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
-        if True:
-            let.color("red")
+        if let.color() == "red":
+            score -= 2
+            s1.clear()
+            s1.write(score, font=FONT)
+        let.color("red")
 
 
 window.mainloop()
