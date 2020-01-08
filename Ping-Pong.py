@@ -130,7 +130,15 @@ let_Violet.shape("square")
 let_Violet.color("Dark Violet")
 let_Violet.shapesize(stretch_len=10, stretch_wid=2)
 let_Violet.up()
-let_Violet.goto(0, 178)
+let_Violet.goto(-210, 178)
+
+
+let_PeachPuff = turtle.Turtle()
+let_PeachPuff.shape("square")
+let_PeachPuff.color("Peach Puff")
+let_PeachPuff.shapesize(stretch_len=10, stretch_wid=2)
+let_PeachPuff.up()
+let_PeachPuff.goto(210, 178)
 
 # ШАРИК И СТЕНЫ
 while True:
@@ -253,6 +261,18 @@ while True:
             s1.clear()
             s1.write(score, font=FONT)
         let_Violet.color('Dim Gray')
+
+    if ball.ycor() >= let_PeachPuff.ycor() - 20 and ball.ycor() <= let_PeachPuff.ycor() + 20 \
+            and ball.xcor() >= let_PeachPuff.xcor() - 110 and ball.xcor() <= let_PeachPuff.xcor() + 110:
+        ball.dy = -ball.dy
+        score += 1
+        s1.clear()
+        s1.write(score, font=FONT)
+        if let_PeachPuff.color() == ('Dim Gray', 'Dim Gray'):
+            score -= 1
+            s1.clear()
+            s1.write(score, font=FONT)
+        let_PeachPuff.color('Dim Gray')
 
 #Dim Gray
 window.mainloop()
