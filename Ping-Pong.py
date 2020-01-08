@@ -77,6 +77,15 @@ window.onkeypress(move_Right, "Right")
 window.onkeypress(move_Left, "Left")
 
 
+#ПРЕПЯТСТВИЯ
+let = turtle.Turtle()
+let.shape("square")
+let.color("grey")
+let.shapesize(stretch_len=10, stretch_wid=2)
+let.up()
+let.goto(0, 270)
+
+
 # ШАРИК И СТЕНЫ
 while True:
     ball.setx(ball.xcor() + ball.dx)
