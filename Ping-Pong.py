@@ -118,6 +118,7 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
+        let.hideturtle()
 
 
 window.mainloop()
