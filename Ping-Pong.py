@@ -5,11 +5,14 @@ from random import choice, randint
 # ИНИЦИАЛИЗАЦИЯ
 score = 0
 
+rand_x = randint(-150, 150)
+rand_y = randint(-150, 150)
+
 ball = turtle.Turtle()
 ball.shape("circle")
 ball.speed(0)
 ball.penup()
-ball.goto(0, 100)
+ball.goto(rand_x, rand_y)
 
 ball.dx = 5
 ball.dy = 5
@@ -80,10 +83,10 @@ window.onkeypress(move_Left, "Left")
 #ПРЕПЯТСТВИЯ
 let = turtle.Turtle()
 let.shape("square")
-let.color("grey")
+let.color("green")
 let.shapesize(stretch_len=10, stretch_wid=2)
 let.up()
-let.goto(0, 270)
+let.goto(0, 278)
 
 # ШАРИК И СТЕНЫ
 while True:
@@ -97,9 +100,9 @@ while True:
         score -= 1
         s1.clear()
         s1.write(score, font=FONT)
-        ball.goto(0, 100)
-        ball.dx = choice([-5,-4, 4,5])
-        ball.dy = randint(-7, -5)
+        ball.goto(rand_x, rand_y)
+        ball.dx = choice([-4,-3, 3, 4,])
+        ball.dy = randint(-10, -5)
 
     if ball.xcor() >= 490:
         ball.dx = -ball.dx
@@ -108,7 +111,7 @@ while True:
         ball.dx = -ball.dx
 
 # ШАРИК И РАКЕТКА
-    if ball.ycor() >= rocket.ycor() - 5 and ball.ycor() <= rocket.ycor() + 5 \
+    if ball.ycor() >= rocket.ycor() - 10 and ball.ycor() <= rocket.ycor() + 10 \
             and ball.xcor() >= rocket.xcor() - 50 and ball.xcor() <= rocket.xcor() + 50:
         ball.dy = -ball.dy
 
@@ -118,5 +121,8 @@ while True:
         score += 1
         s1.clear()
         s1.write(score, font=FONT)
+        if True:
+            let.color("red")
+
 
 window.mainloop()
