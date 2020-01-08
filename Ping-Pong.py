@@ -73,6 +73,7 @@ def move_Left():
         x = -450
     rocket.setx(x)
 
+
 window.listen()
 window.onkeypress(move_Right, "d")
 window.onkeypress(move_Left, "a")
@@ -88,6 +89,7 @@ let.shapesize(stretch_len=10, stretch_wid=2)
 let.up()
 let.goto(0, 278)
 
+
 # ШАРИК И СТЕНЫ
 while True:
     ball.setx(ball.xcor() + ball.dx)
@@ -101,7 +103,7 @@ while True:
         s1.clear()
         s1.write(score, font=FONT)
         ball.goto(rand_x, rand_y)
-        #ball.dx = choice([-4,-3, 3, 4,])
+        ball.dx = choice([-4,-3, 3, 4,])
         ball.dy = randint(-10, -5)
 
     if ball.xcor() >= 490:
