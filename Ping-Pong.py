@@ -118,6 +118,8 @@ while True:
         ball.dy = -ball.dy
     print(let.color())
 
+
+# ШАРИК И КРАСТНОЕ И ЗЕЛЁНОЕ ПРИПЯДСТВИЕ
     if ball.ycor() >= let.ycor() - 20 and ball.ycor() <= let.ycor() + 20 \
             and ball.xcor() >= let.xcor() - 110 and ball.xcor() <= let.xcor() + 110:
         ball.dy = -ball.dy
